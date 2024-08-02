@@ -6,6 +6,6 @@ namespace UserPostSolution.Core.Contracts
     {
         List<Post> GetAllPosts();
         void CreatePost(Post post);
-        void DeletePost(Post post);
+        void DeletePost(int id);
     }
 }

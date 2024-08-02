@@ -17,7 +17,7 @@ namespace UserPostSolution.Core.Repositories
         {
             using IDbConnection dbConnection = new SqlConnection(_dbConnectionString);
             dbConnection.Open();
-            var result = dbConnection.Query<Post>(@"SELECT * FROM posts").ToList();
+            var result = dbConnection.Query<Post>(@"SELECT id, user_id AS UserId, title, content FROM posts").ToList();
             dbConnection.Close();
             return result;
         }
@@ -30,13 +30,13 @@ namespace UserPostSolution.Core.Repositories
                 connection.Execute(sqlCommand, post);
             }
         }
-        public void DeletePost(Post post)
+        public void DeletePost(int id)
         {
             string sqlCommand = "DELETE FROM posts WHERE id = @Id";
 
             using (var connection = new SqlConnection(_dbConnectionString))
             {
-                connection.Execute(sqlCommand, post);
+                connection.Execute(sqlCommand, new { Id = id });
             }
         }
     }

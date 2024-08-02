@@ -30,13 +30,13 @@ namespace UserPostSolution.Core.Repositories
                 connection.Execute(sqlCommand, user);
             }
         }
-        public void DeleteUser(User user)
+        public void DeleteUser(int id)
         {
             string sqlCommand = "DELETE FROM users WHERE id = @Id";
 
             using (var connection = new SqlConnection(_dbConnectionString))
             {
-                connection.Execute(sqlCommand, user);
+                connection.Execute(sqlCommand, new {Id = id });
             }
         }
 

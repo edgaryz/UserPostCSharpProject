@@ -6,6 +6,6 @@ namespace UserPostSolution.Core.Contracts
     {
         List<User> GetAllUsers();
         void CreateUser(User user);
-        void DeleteUser(User user);
+        void DeleteUser(int id);
     }
 }

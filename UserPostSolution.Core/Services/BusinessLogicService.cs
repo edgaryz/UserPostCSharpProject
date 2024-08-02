@@ -22,9 +22,9 @@ namespace UserPostSolution.Core.Services
         {
             _userService.CreateUser(user);
         }
-        public void DeleteUser(User user)
+        public void DeleteUser(int id)
         {
-            _userService.DeleteUser(user);
+            _userService.DeleteUser(id);
         }
         public List<Post> GetAllPosts()
         {
@@ -34,9 +34,9 @@ namespace UserPostSolution.Core.Services
         {
             _postService.CreatePost(post);
         }
-        public void DeletePost(Post post)
+        public void DeletePost(int id)
         {
-            _postService.DeletePost(post);
+            _postService.DeletePost(id);
         }
     }
 }

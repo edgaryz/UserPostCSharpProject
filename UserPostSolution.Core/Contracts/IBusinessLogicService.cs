@@ -7,9 +7,9 @@ namespace UserPostSolution.Core.Contracts
     {
         public List<User> GetAllUsers();
         public void CreateUser(User user);
-        public void DeleteUser(User user);
+        public void DeleteUser(int id);
         public List<Post> GetAllPosts();
         public void CreatePost(Post post);
-        public void DeletePost(Post post);
+        public void DeletePost(int id);
     }
 }

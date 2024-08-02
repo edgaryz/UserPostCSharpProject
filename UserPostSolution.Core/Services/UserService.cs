@@ -17,9 +17,9 @@ namespace UserPostSolution.Core.Services
         {
             _userRepository.CreateUser(user);
         }
-        public void DeleteUser(User user)
+        public void DeleteUser(int id)
         {
-            _userRepository.DeleteUser(user);
+            _userRepository.DeleteUser(id);
         }
     }
 }
